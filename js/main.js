@@ -1,4 +1,21 @@
- AOS.init({
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navCollapse = document.querySelector(".navbar-collapse");
+
+    navLinks.forEach(link =>
+      link.addEventListener("click", () => {
+        if (navCollapse.classList.contains("show")) {
+          // Collapse the navbar
+          new bootstrap.Collapse(navCollapse).toggle();
+        }
+      })
+    );
+  });
+
+
+
+AOS.init({
  	duration: 800,
  	easing: 'slide'
  });
